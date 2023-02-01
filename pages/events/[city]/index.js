@@ -32,7 +32,18 @@ function CityEvents({ data }) {
 
 export default CityEvents;
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+    const { events_categories } = await import("../../../data/data.json");
+
+    const paths = events_categories.map((ev) => ({
+        params: {
+            city: ev.id.toString(),
+        },
+    }));
+    return { paths, fallback: false };
+}
+
+export async function getStaticProps(context) {
     const activeCity = context?.params.city;
 
     const { allEvents } = await import("../../../data/data.json");

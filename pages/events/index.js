@@ -29,7 +29,7 @@ function Events({ data }) {
 
 export default Events;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const { events_categories } = await import("../../data/data.json");
     console.log(events_categories);
 
