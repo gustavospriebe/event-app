@@ -1,0 +1,11 @@
+.city {
+    padding: 2px 16px;
+    background: rgb(235, 235, 235);
+    border-left: 8px solid rgb(235, 235, 235);
+    margin: 20px 10px;
+}
+
+.city:hover {
+    border-left: 8px solid #4979ff;
+}
+
