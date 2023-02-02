@@ -12,7 +12,6 @@ function Events({ data }) {
             {data.map((city) => (
                 <div className={styles.city} key={city.id}>
                     <Link href={`/events/${city.id}`} className="city" passHref>
-                        <a>
                             <Image
                                 src={city.image}
                                 width={100}
@@ -21,7 +20,6 @@ function Events({ data }) {
                             />
                             <h4>{city.title}</h4>
                             <p>{city.description}</p>
-                        </a>
                     </Link>
                 </div>
             ))}

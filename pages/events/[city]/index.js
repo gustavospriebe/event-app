@@ -17,7 +17,6 @@ function CityEvents({ data }) {
                         className="city-events"
                         passHref
                     >
-                        <a>
                             <Image
                                 src={cityEvent.image}
                                 width={100}
@@ -25,7 +24,6 @@ function CityEvents({ data }) {
                                 alt={cityEvent.id}
                             />
                             <h2>{cityEvent.title}</h2>
-                        </a>
                     </Link>
                 </div>
             ))}
@@ -60,4 +58,4 @@ export async function getStaticProps(context) {
             data: filteredEvents,
         },
     };
-}e
+}
