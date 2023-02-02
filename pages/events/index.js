@@ -11,15 +11,17 @@ function Events({ data }) {
 
             {data.map((city) => (
                 <div className={styles.city} key={city.id}>
-                    <Link href={`/events/${city.id}`} className="city">
-                        <Image
-                            src={city.image}
-                            width={100}
-                            height={100}
-                            alt={city.id}
-                        />
-                        <h4>{city.title}</h4>
-                        <p>{city.description}</p>
+                    <Link href={`/events/${city.id}`} className="city" passHref>
+                        <a>
+                            <Image
+                                src={city.image}
+                                width={100}
+                                height={100}
+                                alt={city.id}
+                            />
+                            <h4>{city.title}</h4>
+                            <p>{city.description}</p>
+                        </a>
                     </Link>
                 </div>
             ))}

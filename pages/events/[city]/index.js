@@ -15,14 +15,17 @@ function CityEvents({ data }) {
                         href={`/events/${cityEvent.city}/${cityEvent.id}`}
                         key={cityEvent.id}
                         className="city-events"
+                        passHref
                     >
-                        <Image
-                            src={cityEvent.image}
-                            width={100}
-                            height={100}
-                            alt={cityEvent.id}
-                        />
-                        <h2>{cityEvent.title}</h2>
+                        <a>
+                            <Image
+                                src={cityEvent.image}
+                                width={100}
+                                height={100}
+                                alt={cityEvent.id}
+                            />
+                            <h2>{cityEvent.title}</h2>
+                        </a>
                     </Link>
                 </div>
             ))}
@@ -57,4 +60,4 @@ export async function getStaticProps(context) {
             data: filteredEvents,
         },
     };
-}
+}e
