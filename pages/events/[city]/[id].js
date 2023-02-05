@@ -1,4 +1,3 @@
-import Header from "@/src/Header";
 import Image from "next/image";
 
 function Event({ data }) {
@@ -7,7 +6,6 @@ function Event({ data }) {
     if (data == 404) {
         return (
             <>
-                <Header />
                 <h2>This page does not exist</h2>
             </>
         );
@@ -15,7 +13,6 @@ function Event({ data }) {
 
     return (
         <>
-            <Header />
             <h2>{data.title}</h2>
             <Image src={data.image} width={200} height={200} alt={data.id} />
             <p>{data.description}</p>
@@ -23,8 +20,8 @@ function Event({ data }) {
                 <h4>Emails Registered:</h4>
                 {data.emails_registered.length > 0
                     ? Array.from(new Set(data.emails_registered)).map(
-                        (email, index) => <p key={index}>{email}</p>
-                    )
+                          (email, index) => <p key={index}>{email}</p>
+                      )
                     : "None"}
             </div>
         </>

@@ -1,29 +1,26 @@
-import Header from "@/src/Header";
-import Link from "next/link";
 import Image from "next/image";
-import styles from "../../../styles/Home.module.css";
+import Link from "next/link";
 
 function CityEvents({ data }) {
     return (
         <>
-            <Header />
             <h2>Event</h2>
 
             {data.map((cityEvent) => (
-                <div className={styles.city} key={cityEvent.id}>
+                <div className='city'key={cityEvent.id}>
                     <Link
                         href={`/events/${cityEvent.city}/${cityEvent.id}`}
                         key={cityEvent.id}
                         className="city-events"
                         passHref
                     >
-                            <Image
-                                src={cityEvent.image}
-                                width={100}
-                                height={100}
-                                alt={cityEvent.id}
-                            />
-                            <h2>{cityEvent.title}</h2>
+                        <Image
+                            src={cityEvent.image}
+                            width={100}
+                            height={100}
+                            alt={cityEvent.id}
+                        />
+                        <h2>{cityEvent.title}</h2>
                     </Link>
                 </div>
             ))}

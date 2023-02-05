@@ -1,5 +1,16 @@
-.city, .city-events {
+.city-link, .city-events {
     text-decoration: none;
+    padding: 2px 16px;
     color: #000
 }
+
+header {
+    text-align: center;
+}
+
+header > * {
+    padding: 20px;
+}
+
+
 
